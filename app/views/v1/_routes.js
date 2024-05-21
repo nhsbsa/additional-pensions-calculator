@@ -20,7 +20,7 @@ router.post(/date-of-birth/, (req, res) => {
     res.redirect('previous-contracts')
 });
 
-// Previous contracts Yes/No question
+// Do you have any previous additional pension contracts?
 router.post(/previous-contract/, (req, res) => {
 
     const contract = req.session.data['contract']
@@ -33,22 +33,22 @@ router.post(/previous-contract/, (req, res) => {
     }
 });
 
-// Value of previous contracts?
+// Enter the amount of your previous additional pension contract
 router.post(/previous-contracts-amount/, (req, res) => {
     res.redirect('additional-pension-amount')
 });
 
-// How much additional pension would you like?
+// How much additional pension would you like to buy?
 router.post(/additional-pension-amount/, (req, res) => {
     res.redirect('dependant-cover')
 });
 
-// Dependant cover?
+// Would you like to add Dependant cover?
 router.post(/dependant-cover/, (req, res) => {
     res.redirect('payment-option')
 });
 
-// Lump Sum or Instalments?
+// How would you like to pay for your additional pension?
 router.post(/payment-option/, (req, res) => {
 
     const payment = req.session.data['payment']
@@ -61,7 +61,7 @@ router.post(/payment-option/, (req, res) => {
     }
 });
 
-// How many instalments?
+// How long do you want your monthly instalments to last?
 router.post(/instalments/, (req, res) => {
     res.redirect('result')
 });

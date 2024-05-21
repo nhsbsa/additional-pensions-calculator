@@ -34,7 +34,7 @@ router.post(/previous-contract/, (req, res) => {
 });
 
 // Enter the amount of your previous additional pension contract
-router.post(/previous-contracts-amount/, (req, res) => {
+router.post(/PCA/, (req, res) => {
     res.redirect('additional-pension-amount')
 });
 

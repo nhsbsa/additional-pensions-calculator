@@ -62,8 +62,155 @@
       <!-- Add content here -->
       <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
      
+
+      
       <div class="nhsuk-form-group">
+
         <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+          <h2 class="nhsuk-fieldset__heading">
+            Here is your calculation result based on your answers
+          </h2>
+        </legend>
+
+        <div class="nhsuk-hint" id="contact-hint">
+          Changing these answers will affect the result
+        </div>
+
+        <dl class="nhsuk-summary-list">
+        
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Date of birth
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              27 April 1986
+            </dd>
+        
+            <dd class="nhsuk-summary-list__actions">
+        
+              <a href="date-of-birth">
+                Change<span class="nhsuk-u-visually-hidden"> date of birth</span>
+              </a>
+        
+            </dd>
+        
+          </div>
+        
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Previous additional pension contract?
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              Yes
+            </dd>
+        
+            <dd class="nhsuk-summary-list__actions">
+        
+              <a href="previous-contracts">
+                Change<span class="nhsuk-u-visually-hidden"> previous additional pension contract?</span>
+              </a>
+        
+            </dd>
+        
+          </div>
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Previous contract amount?
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              £1000
+            </dd>
+        
+            <dd class="nhsuk-summary-list__actions">
+        
+              <a href="previous-contracts-amount">
+                Change<span class="nhsuk-u-visually-hidden"> Previous contract amount?</span>
+              </a>
+        
+            </dd>
+        
+          </div>
+        
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              How much additional pension?
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              <p>£2000</p>
+            </dd>
+        
+            <dd class="nhsuk-summary-list__actions">
+        
+              <a href="additional-pension-amount">
+                Change<span class="nhsuk-u-visually-hidden"> how much additional pension?</span>
+              </a>
+        
+            </dd>
+        
+          </div>
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Dependant cover?
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              <p>Yes</p>
+            </dd>
+        
+            <dd class="nhsuk-summary-list__actions">
+        
+              <a href="dependant-cover">
+                Change<span class="nhsuk-u-visually-hidden"> Dependant cover?</span>
+              </a>
+        
+            </dd>
+        
+          </div>
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              How would you like to pay?
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              <p>Instalments</p>
+            </dd>
+        
+            <dd class="nhsuk-summary-list__actions">
+        
+              <a href="payment-option">
+                Change<span class="nhsuk-u-visually-hidden"> How would you like to pay?</span>
+              </a>
+        
+            </dd>
+        
+          </div>
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              How many instalments?
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              <p>10</p>
+            </dd>
+        
+            <dd class="nhsuk-summary-list__actions">
+        
+              <a href="instalments">
+                Change<span class="nhsuk-u-visually-hidden"> How many instalments?</span>
+              </a>
+        
+            </dd>
+        
+          </div>
+        
+        </dl>
+
+      
+    
+    </div>
+
+        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
           <h1 class="nhsuk-fieldset__heading">
             Result
           </h1>
@@ -77,19 +224,19 @@
 
 						<div class="nhsuk-summary-list__row">
 							<dt class="nhsuk-summary-list__key">Monthly payment</dt>
-							<dd class="nhsuk-summary-list__value">£483.60</dd>
+							<dd class="nhsuk-summary-list__value">£242.40</dd>
 
 						</div>
 
 						<div class="nhsuk-summary-list__row">
 							<dt class="nhsuk-summary-list__key">Annual amount</dt>
-							<dd class="nhsuk-summary-list__value">£5,803.20</dd>
+							<dd class="nhsuk-summary-list__value">£2,908.80</dd>
 
 						</div>
 
 						<div class="nhsuk-summary-list__row">
 							<dt class="nhsuk-summary-list__key">Total amount</dt>
-							<dd class="nhsuk-summary-list__value">£11,606.40</dd>
+							<dd class="nhsuk-summary-list__value">£29,088.00</dd>
 
 						</div>
 
@@ -101,7 +248,7 @@
             </h2>
           </legend>
 
-  <p>Read through our <a href="https://www.nhsbsa.nhs.uk/sites/default/files/2023-11/Added%20Benefits-Additional%20Pension%20factsheet-20231020.pdf" target="_blank">additional pension factsheet</a> before you complete the AP1 form. Print out, fill in and send your form to your employer within 6 weeks of the calculation date.</p>
+  <p>Read through the <a href="https://www.nhsbsa.nhs.uk/sites/default/files/2023-11/Added%20Benefits-Additional%20Pension%20factsheet-20231020.pdf" target="_blank">additional pension factsheet</a> before you complete the AP1 form. Print out, fill in and send your form to your employer within 6 weeks of the calculation date.</p>
   <p>Another calculation will be needed if:</p>
   <ul>
     <li>the form is not sent within 6 weeks</li>
@@ -117,150 +264,6 @@
           <button class="nhsuk-button nhsuk-button--secondary" data-module="nhsuk-button" type="submit">
             Start again
           </button>
-
-          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
-            <h2 class="nhsuk-fieldset__heading">
-              Previous answers
-            </h2>
-          </legend>
-
-          <div class="nhsuk-hint" id="contact-hint">
-            Changing these answers will affect the result
-          </div>
-
-          <dl class="nhsuk-summary-list">
-          
-            <div class="nhsuk-summary-list__row">
-              <dt class="nhsuk-summary-list__key">
-                Date of birth
-              </dt>
-              <dd class="nhsuk-summary-list__value">
-                15 March 1984
-              </dd>
-          
-              <dd class="nhsuk-summary-list__actions">
-          
-                <a href="date-of-birth">
-                  Change<span class="nhsuk-u-visually-hidden"> date of birth</span>
-                </a>
-          
-              </dd>
-          
-            </div>
-          
-            <div class="nhsuk-summary-list__row">
-              <dt class="nhsuk-summary-list__key">
-                Previous additional pension contract?
-              </dt>
-              <dd class="nhsuk-summary-list__value">
-                Yes
-              </dd>
-          
-              <dd class="nhsuk-summary-list__actions">
-          
-                <a href="previous-contracts">
-                  Change<span class="nhsuk-u-visually-hidden"> previous additional pension contract?</span>
-                </a>
-          
-              </dd>
-          
-            </div>
-
-            <div class="nhsuk-summary-list__row">
-              <dt class="nhsuk-summary-list__key">
-                Previous contract amount?
-              </dt>
-              <dd class="nhsuk-summary-list__value">
-                £1000
-              </dd>
-          
-              <dd class="nhsuk-summary-list__actions">
-          
-                <a href="previous-contracts-amount">
-                  Change<span class="nhsuk-u-visually-hidden"> Previous contract amount?</span>
-                </a>
-          
-              </dd>
-          
-            </div>
-          
-            <div class="nhsuk-summary-list__row">
-              <dt class="nhsuk-summary-list__key">
-                How much additional pension?
-              </dt>
-              <dd class="nhsuk-summary-list__value">
-                <p>£4000</p>
-              </dd>
-          
-              <dd class="nhsuk-summary-list__actions">
-          
-                <a href="additional-pension-amount">
-                  Change<span class="nhsuk-u-visually-hidden"> how much additional pension?</span>
-                </a>
-          
-              </dd>
-          
-            </div>
-
-            <div class="nhsuk-summary-list__row">
-              <dt class="nhsuk-summary-list__key">
-                Dependant cover?
-              </dt>
-              <dd class="nhsuk-summary-list__value">
-                <p>Yes</p>
-              </dd>
-          
-              <dd class="nhsuk-summary-list__actions">
-          
-                <a href="dependant-cover">
-                  Change<span class="nhsuk-u-visually-hidden"> Dependant cover?</span>
-                </a>
-          
-              </dd>
-          
-            </div>
-
-            <div class="nhsuk-summary-list__row">
-              <dt class="nhsuk-summary-list__key">
-                How would you like to pay?
-              </dt>
-              <dd class="nhsuk-summary-list__value">
-                <p>Instalments</p>
-              </dd>
-          
-              <dd class="nhsuk-summary-list__actions">
-          
-                <a href="payment-option">
-                  Change<span class="nhsuk-u-visually-hidden"> How would you like to pay?</span>
-                </a>
-          
-              </dd>
-          
-            </div>
-
-            <div class="nhsuk-summary-list__row">
-              <dt class="nhsuk-summary-list__key">
-                How many instalments?
-              </dt>
-              <dd class="nhsuk-summary-list__value">
-                <p>12</p>
-              </dd>
-          
-              <dd class="nhsuk-summary-list__actions">
-          
-                <a href="instalments">
-                  Change<span class="nhsuk-u-visually-hidden"> How many instalments?</span>
-                </a>
-          
-              </dd>
-          
-            </div>
-          
-          </dl>
-
-        
-      
-      </div>
 
 
       <!-- End of content -->

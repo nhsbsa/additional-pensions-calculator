@@ -600,6 +600,15 @@ ol, ul, .nhsuk-list {
     margin-bottom: 24px;
   }
 }
+ol ol, ul ol, ol ul, ul ul, .nhsuk-list ol, .nhsuk-list ul, ol .nhsuk-list, ul .nhsuk-list, .nhsuk-list .nhsuk-list {
+  margin-top: 8px;
+  margin-bottom: 0;
+}
+@media (min-width: 40.0625em) {
+  ol ol, ul ol, ol ul, ul ul, .nhsuk-list ol, .nhsuk-list ul, ol .nhsuk-list, ul .nhsuk-list, .nhsuk-list .nhsuk-list {
+    margin-top: 8px;
+  }
+}
 
 ol > li, ul > li, .nhsuk-list > li {
   margin-bottom: 8px;
@@ -2855,25 +2864,6 @@ b {
     display: none;
   }
 }
-.nhsuk-breadcrumb .nhsuk-icon__chevron-right {
-  fill: #aeb7bd;
-  height: 18px;
-  position: relative;
-  top: 5px;
-  width: 18px;
-}
-@media (min-width: 61.875em) {
-  .nhsuk-breadcrumb .nhsuk-icon__chevron-right {
-    margin: 0 3px 0 5px;
-  }
-}
-.nhsuk-breadcrumb .nhsuk-icon__chevron-left {
-  float: left;
-  height: 24px;
-  left: -8px;
-  position: relative;
-  width: 24px;
-}
 .nhsuk-breadcrumb + .nhsuk-width-container .nhsuk-main-wrapper {
   padding-top: 0;
 }
@@ -3136,6 +3126,29 @@ b {
 }
 .nhsuk-button--reverse.nhsuk-button--disabled:focus {
   background-color: #ffffff;
+}
+
+.nhsuk-button--warning {
+  background-color: #d5281b;
+  box-shadow: 0 4px 0 #6b140e;
+}
+.nhsuk-button--warning:hover {
+  background-color: #a82015;
+}
+.nhsuk-button--warning:focus {
+  background: #ffeb3b;
+  box-shadow: 0 4px 0 #212b32;
+  color: #212b32;
+  outline: 4px solid transparent;
+}
+.nhsuk-button--warning:active {
+  background: #6b140e;
+  box-shadow: none;
+  color: #ffffff;
+  top: 4px;
+}
+.nhsuk-button--warning.nhsuk-button--disabled {
+  background-color: #d5281b;
 }
 
 /**
@@ -4040,7 +4053,7 @@ b {
  */
 .nhsuk-error-summary {
   padding: 16px;
-  margin-bottom: 48px;
+  margin-bottom: 32px;
   border: 4px solid #d5281b;
 }
 @media (min-width: 40.0625em) {
@@ -4050,7 +4063,7 @@ b {
 }
 @media (min-width: 40.0625em) {
   .nhsuk-error-summary {
-    margin-bottom: 56px;
+    margin-bottom: 48px;
   }
 }
 @media (min-width: 40.0625em) {
@@ -4320,6 +4333,7 @@ b {
 @media (min-width: 48.0625em) {
   .nhsuk-footer {
     display: flex;
+    justify-content: space-between;
   }
 }
 
@@ -4627,6 +4641,7 @@ b {
 .nhsuk-search__input::placeholder {
   color: #4c6272;
   font-size: 16px;
+  opacity: 1;
 }
 .nhsuk-search__input:-ms-input-placeholder {
   color: #4c6272;
@@ -4976,6 +4991,12 @@ b {
 @media (min-width: 48.0625em) {
   .nhsuk-header__navigation-item--home {
     display: none;
+  }
+}
+
+@media (min-width: 48.0625em) {
+  .nhsuk-header__navigation-list--left-aligned {
+    justify-content: initial;
   }
 }
 
@@ -5682,7 +5703,7 @@ b {
   border: 2px solid #4c6272; /* 2 */
   border-radius: 0;
   box-sizing: border-box;
-  height: 40px;
+  min-height: 40px;
   margin-top: 0;
   padding: 4px;
   width: 100%;
@@ -5771,7 +5792,7 @@ b {
   cursor: default;
   display: inline-block;
   flex: 0 0 auto;
-  height: 40px;
+  min-height: 40px;
   min-width: 2.5rem;
   padding: 4px;
   text-align: center;
@@ -5902,14 +5923,18 @@ b {
 }
 
 /* Modifiers that make labels look more like their equivalent headings */
+.nhsuk-label--xl,
+.nhsuk-label--l,
+.nhsuk-label--m {
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
 .nhsuk-label--xl {
   font-size: 32px;
   font-size: 2rem;
   line-height: 1.25;
-  display: block;
-  font-weight: 600;
-  margin-top: 0;
-  margin-bottom: 40px;
 }
 @media (min-width: 40.0625em) {
   .nhsuk-label--xl {
@@ -5924,20 +5949,11 @@ b {
     line-height: 1.15;
   }
 }
-@media (min-width: 40.0625em) {
-  .nhsuk-label--xl {
-    margin-bottom: 48px;
-  }
-}
 
 .nhsuk-label--l {
   font-size: 24px;
   font-size: 1.5rem;
   line-height: 1.33333;
-  display: block;
-  font-weight: 600;
-  margin-top: 0;
-  margin-bottom: 16px;
 }
 @media (min-width: 40.0625em) {
   .nhsuk-label--l {
@@ -5952,20 +5968,11 @@ b {
     line-height: 1.05;
   }
 }
-@media (min-width: 40.0625em) {
-  .nhsuk-label--l {
-    margin-bottom: 24px;
-  }
-}
 
 .nhsuk-label--m {
   font-size: 20px;
   font-size: 1.25rem;
   line-height: 1.4;
-  display: block;
-  font-weight: 600;
-  margin-top: 0;
-  margin-bottom: 16px;
 }
 @media (min-width: 40.0625em) {
   .nhsuk-label--m {
@@ -5980,20 +5987,13 @@ b {
     line-height: 1.15;
   }
 }
-@media (min-width: 40.0625em) {
-  .nhsuk-label--m {
-    margin-bottom: 24px;
-  }
-}
 
 .nhsuk-label--s {
   font-size: 16px;
   font-size: 1rem;
   line-height: 1.5;
-  display: block;
   font-weight: 600;
   margin-top: 0;
-  margin-bottom: 16px;
 }
 @media (min-width: 40.0625em) {
   .nhsuk-label--s {
@@ -6006,11 +6006,6 @@ b {
   .nhsuk-label--s {
     font-size: 14pt;
     line-height: 1.15;
-  }
-}
-@media (min-width: 40.0625em) {
-  .nhsuk-label--s {
-    margin-bottom: 24px;
   }
 }
 
@@ -6538,6 +6533,14 @@ b {
 /* ==========================================================================
    COMPONENTS/ #SELECT
    ========================================================================== */
+/**
+ * Select input sizing
+ * 1. Uses rems so that safari input scales with font size
+ * 2. This min-width was chosen because:
+ *    - it makes the Select wider than it is tall (which is what users expect)
+ *    - 20ex + 3ex matches the 'width-10' variant of the input component
+ *    - it fits comfortably on screens as narrow as 240px wide
+ */
 .nhsuk-select {
   font-weight: 400;
   font-size: 16px;
@@ -6545,7 +6548,8 @@ b {
   line-height: 1.5;
   border: 2px solid #4c6272;
   box-sizing: border-box;
-  height: 40px;
+  height: 2.5rem; /* [1] */
+  min-width: 23ex; /* [2] */
   max-width: 100%;
   padding: 4px;
 }
@@ -7499,4 +7503,61 @@ b {
   .nhsuk-back-link {
     padding-top: 24px;
   }
+}
+.beta-banner {
+  padding: 16px 0;
+  background-color: #ffffff;
+  border-bottom: 1px solid #dcdcdc;
+}
+
+.status-box {
+  padding: 3px 5px 3px 5px;
+  background-color: #007f3b;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 20px;
+  line-height: 1.45455;
+  font-weight: bold;
+}
+
+.status-box.status-box-blue {
+  background-color: #005eb8;
+}
+
+.nhsuk-phase-banner {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #d8dde0;
+}
+
+.nhsuk-phase-banner__content {
+  font-weight: 400;
+  font-size: 14px;
+  font-size: 0.875rem;
+  line-height: 1.71429;
+  color: #212b32;
+  display: table;
+  margin: 0;
+}
+@media (min-width: 40.0625em) {
+  .nhsuk-phase-banner__content {
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+}
+@media print {
+  .nhsuk-phase-banner__content {
+    font-size: 14pt;
+    line-height: 1.2;
+  }
+}
+
+.nhsuk-phase-banner__content__tag {
+  margin-right: 10px;
+}
+
+.nhsuk-phase-banner__text {
+  display: table-cell;
+  vertical-align: middle;
 }

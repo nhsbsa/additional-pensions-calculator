@@ -11,12 +11,12 @@ const router = express.Router();
 
 
 // Start page
-router.post(/v2/start/, (req, res) => {
+router.post(/start/, (req, res) => {
     res.redirect('date-of-birth')
 });
 
 // Start page
-router.post(/v2/start2/, (req, res) => {
+router.post( /start2/, (req, res) => {
     res.redirect('date-of-birth')
 });
 

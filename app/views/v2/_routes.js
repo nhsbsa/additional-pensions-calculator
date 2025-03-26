@@ -10,13 +10,9 @@ const router = express.Router();
 // ========================================================================
 
 
-// Start page
-router.post(/start/, (req, res) => {
-    res.redirect('date-of-birth')
-});
 
 // Start page
-router.post( /start2/, (req, res) => {
+router.post( /start3/, (req, res) => {
     res.redirect('date-of-birth')
 });
 

@@ -12,7 +12,7 @@ const router = express.Router();
 
 
 // Start page
-router.post( /start3/, (req, res) => {
+router.post( /start2/, (req, res) => {
     res.redirect('date-of-birth')
 });
 

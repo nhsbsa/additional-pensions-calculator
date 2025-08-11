@@ -52,7 +52,7 @@ router.post(/dependant-cover/, (req, res) => {
 // How would you like to pay for your additional pension?
 router.post(/payment-option/, (req, res) => {
 
-    const payment = req.session.data['payment']
+    const payment = req.session.data['payment-option']
 
     if (payment == 'lumpsum') {
         res.redirect('result')

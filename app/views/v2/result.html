@@ -53,13 +53,57 @@
 
         <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
           <h2 class="nhsuk-fieldset__heading">
-            Here is your calculation result based on your answers
+            Your additional pension calculation
           </h2>
         </legend>
 
         <div class="nhsuk-hint" id="contact-hint">
-          The cost of your additional pension is affected by your age. Therefore this quotation is only valid until your next birthday. 
+          Your age is one of the factors that affects the cost of your additional pension. This means this calculation is only valid until your next birthday.
         </div>
+
+        <br>
+<br>
+        <!-- Table for "Lump Sum" -->
+        {% if data['payment-option'] === 'lumpsum' %}
+        <table class="nhsuk-table-responsive" role="table">
+          <caption class="nhsuk-table__caption">Check your annual pension calculation</caption>
+          <thead class="nhsuk-table__head" role="rowgroup">
+            <tr role="row">
+              <th scope="col" class="nhsuk-table__header nhsuk-u-width-one-quarter" role="columnheader">Payment</th>
+              <th scope="col" class="nhsuk-table__header nhsuk-u-width-one-quarter" role="columnheader">Amount</th>
+              <th scope="col" class="nhsuk-table__header nhsuk-u-width-one-half" role="columnheader">Description</th>
+            </tr>
+          </thead>
+          <tbody class="nhsuk-table__body">
+
+            <tr class="nhsuk-table__row" role="row">
+              <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Payment </span>Total amount</td>
+              <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Amount</span>£29,088.00</td>
+              <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Description</span><p class="nhsuk-body-s">This is the cost of buying your additional pension by making a one-off payment in full.
+              </p></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <details class="nhsuk-details">
+  <summary class="nhsuk-details__summary">
+    <span class="nhsuk-details__summary-text">
+      How we’ve calculated the cost of your additional pension
+    </span>
+  </summary>
+
+    <div class="nhsuk-details__text">
+
+    <p>We’ve calculated the total amount you’ll need to pay your employer to buy you additional pension.
+
+This is calculated using the information you’ve entered. If you change this information, your total amount will change.</p>
+
+  </div>
+</details>
+        {% endif %}
+
+        <!-- Table for "Instalments" -->
+         {% if data['payment-option'] === 'instalments' %}
         <table class="nhsuk-table-responsive" role="table">
           <caption class="nhsuk-table__caption">Calculation result</caption>
           <thead class="nhsuk-table__head" role="rowgroup">
@@ -73,33 +117,54 @@
             <tr class="nhsuk-table__row" role="row">
               <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Payment </span>Monthly payment</td>
               <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Amount </span>£242.40</td>
-              <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Description</span><p class="nhsuk-body-s">This is the amount we will deduct from your pay each month.</p></td>
+              <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Description</span><p class="nhsuk-body-s">This is the amount we’ll deduct from your pay each month.</p></td>
             </tr>
             <tr class="nhsuk-table__row" role="row">
               <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Payment </span>Annual amount</td>
               <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Amount</span>£2,908.80</td>
-              <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Description</span><p class="nhsuk-body-s">This is the total amount of your monthly payments over a year or 12 months.
+              <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Description</span><p class="nhsuk-body-s">This is the amount your additional pension will cost over one year. It’s the total of your 12 monthly payments.
                 <br> <br>For example if your monthly amount is £242.40, this amount is £242.40 multiplied by 12.</p> 
         </td>
             </tr>
             <tr class="nhsuk-table__row" role="row">
               <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Payment </span>Total amount</td>
               <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Amount</span>£29,088.00</td>
-              <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Description</span><p class="nhsuk-body-s">This is the total amount of your monthly payments over your chosen period. <br><br>For example, if you chose to make monthly payments over 10 years. This amount is your monthly payment multiplied by 12 and then multiplied by 10.Either 1 year up to a maximum of 20 years.
+              <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Description</span><p class="nhsuk-body-s">This is the amount your additional pension will cost you over the total number of years you chose.
               </p></td>
             </tr>
           </tbody>
         </table>
 
-<br>
+         <details class="nhsuk-details">
+  <summary class="nhsuk-details__summary">
+    <span class="nhsuk-details__summary-text">
+      How we’ve calculated the cost of your additional pension
+    </span>
+  </summary>
+
+    <div class="nhsuk-details__text">
+
+    <p>We’ve calculated a monthly amount, an annual amount and a total amount.</p>
+    <p>The <strong>monthly amount</strong> is the amount that will be deducted from your pay each month to cover the cost of buying your additional pension.</p>
+    <p>This is calculated using the information you’ve entered. If you change this information, your monthly amount will change.</p>
+    <p>We’ve then calculated your:</p>
+    <ul>
+      <li><strong>annual amount</strong> by multiplying your monthly amount by 12</li>
+      <li><strong>total amount</strong> by multiplying your annual amount by the number of years you’ve chosen - for example, if you chose to pay over 10 years, we’d multiply your annual amount by 12</li>
+    </ul>
+
+  </div>
+</details>
+        {% endif %}
+
 <br>
         <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
           <h1 class="nhsuk-fieldset__heading">
-            Your answers
+            	Check your answers
           </h1>
         </legend>
 <div class="nhsuk-hint" id="contact-hint">
-        You can change your answers to affect your calculation result.
+        Changing your answers will affect the payment amounts shown in your calculation.
       </div>
       <dl class="nhsuk-summary-list">
       
@@ -123,7 +188,7 @@
       
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key">
-            Previous additional pension contract?
+            Previous additional pension contract
           </dt>
           <dd class="nhsuk-summary-list__value">
             Yes
@@ -132,7 +197,7 @@
           <dd class="nhsuk-summary-list__actions">
       
             <a href="previous-contracts">
-              Change<span class="nhsuk-u-visually-hidden"> previous additional pension contract?</span>
+              Change<span class="nhsuk-u-visually-hidden"> Additional pension amount</span>
             </a>
       
           </dd>
@@ -141,7 +206,7 @@
 
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key">
-            Previous contract amount?
+            Previous contract amount
           </dt>
           <dd class="nhsuk-summary-list__value">
             £1,000
@@ -150,7 +215,7 @@
           <dd class="nhsuk-summary-list__actions">
       
             <a href="previous-contracts-amount">
-              Change<span class="nhsuk-u-visually-hidden"> Previous contract amount?</span>
+              Change<span class="nhsuk-u-visually-hidden"> Previous contract amount</span>
             </a>
       
           </dd>
@@ -159,7 +224,7 @@
       
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key">
-            How much additional pension?
+            Additional pension amount
           </dt>
           <dd class="nhsuk-summary-list__value">
             <p>£2,000</p>
@@ -168,7 +233,7 @@
           <dd class="nhsuk-summary-list__actions">
       
             <a href="additional-pension-amount">
-              Change<span class="nhsuk-u-visually-hidden"> how much additional pension?</span>
+              Change<span class="nhsuk-u-visually-hidden"> Additional pension amount</span>
             </a>
       
           </dd>
@@ -177,7 +242,7 @@
 
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key">
-            Dependant cover?
+            Dependant cover
           </dt>
           <dd class="nhsuk-summary-list__value">
             <p>Yes</p>
@@ -186,7 +251,7 @@
           <dd class="nhsuk-summary-list__actions">
       
             <a href="dependant-cover">
-              Change<span class="nhsuk-u-visually-hidden"> Dependant cover?</span>
+              Change<span class="nhsuk-u-visually-hidden"> Dependant cover</span>
             </a>
       
           </dd>
@@ -195,7 +260,7 @@
 
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key">
-            How would you like to pay?
+            Payment type
           </dt>
           <dd class="nhsuk-summary-list__value">
             <p>Instalments</p>
@@ -204,7 +269,7 @@
           <dd class="nhsuk-summary-list__actions">
       
             <a href="payment-option">
-              Change<span class="nhsuk-u-visually-hidden"> How would you like to pay?</span>
+              Change<span class="nhsuk-u-visually-hidden"> Payment type</span>
             </a>
       
           </dd>
@@ -213,7 +278,7 @@
 
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key">
-            How many years of monthly payments?
+            How many years of monthly payments
           </dt>
           <dd class="nhsuk-summary-list__value">
             <p>10</p>
@@ -222,7 +287,7 @@
           <dd class="nhsuk-summary-list__actions">
       
             <a href="instalments">
-              Change<span class="nhsuk-u-visually-hidden"> How many instalments?</span>
+              Change<span class="nhsuk-u-visually-hidden"> How many instalments</span>
             </a>
       
           </dd>
@@ -238,22 +303,41 @@
    
       
   <h3>
-    Next steps
+    	What you need to do next
   </h3>
 
-  <p class="nhsuk-u-font-weight-normal"> Once you are happy with your calculation, make sure you:</p>
+  <p class="nhsuk-u-font-weight-normal"> If you’d like to buy your additional pension after you’ve checked your calculation, you need to:</p>
 
   <ul>
-    <li>read the <a href="https://www.nhsbsa.nhs.uk/sites/default/files/2025-03/Added%20benefits-Additional%20pension%20factsheet-20250401-%28V14A%29.pdf" target="_blank">additional pension factsheet (opens in new tab)</a> before you complete the AP1 form </li>
     <li>print out and fill in your partially completed form</li>
     <li>send the form to your employer or Pension Officer within 6 weeks of making the calculation</li>
   </ul>
 
-<p>It will take up to 6 weeks to confirm your application for additional pension.</p>
-<p>If your birthday is in the next 6 weeks, you should wait until after your birthday. Then you can do the calculation and send it to your employer or pensions officer. </p>
-<p>Your NHS employer will complete their part of the AP1 form and send your application to NHS Pensions.</p>
-<p>We aim to respond within 4 weeks of receiving your application from your employer or pension officer.</p>
-<p>The download will open in a new tab as a PDF.</p>
+<p>You can find more information about completing your AP1 form in our <a href="https://www.nhsbsa.nhs.uk/sites/default/files/2025-03/Added%20benefits-Additional%20pension%20factsheet-20250401-%28V14A%29.pdf" target="_blank">additional pension factsheet (PDF: 211KB, opens in new tab).</a></p>
+<p>It can take up to 6 weeks to process your application to buy additional pension.</p>
+
+<h3>
+    	If your birthday is in the next 6 weeks
+  </h3>
+
+  <p class="nhsuk-u-font-weight-normal"> You need to wait until after your birthday and complete a new calculation.</p>
+  <p>This is because your age affects the cost of buying additional pension. As it can take up to 6 weeks to process your application, you should not buy any additional pension until after your birthday.</p>
+
+  <h3>
+    	What your employer will do
+  </h3>
+
+  <p class="nhsuk-u-font-weight-normal"> They’ll complete part B of the AP1 form and send us your application.</p>
+  <p>We aim to respond within 4 weeks of the date we receive this.</p>
+
+    <h3>
+    	Downloading your additional pension application form
+  </h3>
+
+  <p class="nhsuk-u-font-weight-normal"> When you download your form, you'll need to print it off and fill it in..</p>
+  <p>Your form will open in a new tab as a PDF.</p>
+
+
   <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
     Download your form
   </button>

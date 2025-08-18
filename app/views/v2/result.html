@@ -78,7 +78,7 @@
 
             <tr class="nhsuk-table__row" role="row">
               <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Payment </span>Total amount</td>
-              <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Amount</span>£29,088.00</td>
+              <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Amount</span>£29,088</td>
               <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Description</span><p class="nhsuk-body-s">This is the cost of buying your additional pension by making a one-off payment in full.
               </p></td>
             </tr>
@@ -94,9 +94,9 @@
 
     <div class="nhsuk-details__text">
 
-    <p>We’ve calculated the total amount you’ll need to pay your employer to buy you additional pension.
+    <p>We’ve calculated the total amount you’ll need to pay your employer to buy your additional pension.
 
-This is calculated using the information you’ve entered. If you change this information, your total amount will change.</p>
+<p>This is calculated using the information you’ve entered. If you change this information, your total amount will change.</p>
 
   </div>
 </details>
@@ -122,13 +122,12 @@ This is calculated using the information you’ve entered. If you change this in
             <tr class="nhsuk-table__row" role="row">
               <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Payment </span>Annual amount</td>
               <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Amount</span>£2,908.80</td>
-              <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Description</span><p class="nhsuk-body-s">This is the amount your additional pension will cost over one year. It’s the total of your 12 monthly payments.
-                <br> <br>For example if your monthly amount is £242.40, this amount is £242.40 multiplied by 12.</p> 
+              <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Description</span><p class="nhsuk-body-s">This is the amount your additional pension will cost over one year. It’s the total of your 12 monthly payments.</p> 
         </td>
             </tr>
             <tr class="nhsuk-table__row" role="row">
               <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Payment </span>Total amount</td>
-              <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Amount</span>£29,088.00</td>
+              <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Amount</span>£29,088</td>
               <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Description</span><p class="nhsuk-body-s">This is the amount your additional pension will cost you over the total number of years you chose.
               </p></td>
             </tr>
@@ -166,6 +165,9 @@ This is calculated using the information you’ve entered. If you change this in
 <div class="nhsuk-hint" id="contact-hint">
         Changing your answers will affect the payment amounts shown in your calculation.
       </div>
+      
+      <!-- Check your answers for "Lump Sum" -->
+        {% if data['payment-option'] === 'lumpsum' %}
       <dl class="nhsuk-summary-list">
       
         <div class="nhsuk-summary-list__row">
@@ -263,7 +265,122 @@ This is calculated using the information you’ve entered. If you change this in
             Payment type
           </dt>
           <dd class="nhsuk-summary-list__value">
-            <p>Instalments</p>
+            <p>A single one-off payment</p>
+          </dd>
+      
+          <dd class="nhsuk-summary-list__actions">
+      
+            <a href="payment-option">
+              Change<span class="nhsuk-u-visually-hidden"> Payment type</span>
+            </a>
+      
+          </dd>
+      
+        </div>
+      
+      </dl>
+{% endif %}
+
+ <!-- Check your answers for "Instalments" -->
+        {% if data['payment-option'] === 'instalments' %}
+      <dl class="nhsuk-summary-list">
+      
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Date of birth
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            27 April 1986
+          </dd>
+      
+          <dd class="nhsuk-summary-list__actions">
+      
+            <a href="date-of-birth">
+              Change<span class="nhsuk-u-visually-hidden"> date of birth</span>
+            </a>
+      
+          </dd>
+      
+        </div>
+      
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Previous additional pension contract
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Yes
+          </dd>
+      
+          <dd class="nhsuk-summary-list__actions">
+      
+            <a href="previous-contracts">
+              Change<span class="nhsuk-u-visually-hidden"> Additional pension amount</span>
+            </a>
+      
+          </dd>
+      
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Previous contract amount
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            £1,000
+          </dd>
+      
+          <dd class="nhsuk-summary-list__actions">
+      
+            <a href="previous-contracts-amount">
+              Change<span class="nhsuk-u-visually-hidden"> Previous contract amount</span>
+            </a>
+      
+          </dd>
+      
+        </div>
+      
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Additional pension amount
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            <p>£2,000</p>
+          </dd>
+      
+          <dd class="nhsuk-summary-list__actions">
+      
+            <a href="additional-pension-amount">
+              Change<span class="nhsuk-u-visually-hidden"> Additional pension amount</span>
+            </a>
+      
+          </dd>
+      
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Dependant cover
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            <p>Yes</p>
+          </dd>
+      
+          <dd class="nhsuk-summary-list__actions">
+      
+            <a href="dependant-cover">
+              Change<span class="nhsuk-u-visually-hidden"> Dependant cover</span>
+            </a>
+      
+          </dd>
+      
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Payment type
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            <p>Regular monthly payments</p>
           </dd>
       
           <dd class="nhsuk-summary-list__actions">
@@ -295,7 +412,7 @@ This is calculated using the information you’ve entered. If you change this in
         </div>
       
       </dl>
-
+{% endif %}
     
   
   </div>
